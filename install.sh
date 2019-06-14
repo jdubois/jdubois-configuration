@@ -3,9 +3,9 @@
 # This script installs all the tools I like on top of a normal Ubuntu box.
 #
 # This script should be run via curl:
-#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/jdubois/jdubois-configuration/master/tools/install.sh)"
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/jdubois/jdubois-configuration/master/install.sh)"
 # or wget:
-#   sh -c "$(wget -qO- https://raw.githubusercontent.com/jdubois/jdubois-configuration/master/tools/install.sh)"
+#   sh -c "$(wget -qO- https://raw.githubusercontent.com/jdubois/jdubois-configuration/master/install.sh)"
 #
 setup_color() {
 	# Only use colors if connected to a terminal
