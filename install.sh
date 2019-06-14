@@ -26,27 +26,27 @@ setup_color() {
 	fi
 }
 
-install-base-packages() {
+install_base_packages() {
     apt-get install -y wget curl vim git zip bzip2 fontconfig python g++ libpng-dev build-essential software-properties-common
 }
 
-install-jdk() {
+install_jdk() {
     wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
     sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
     apt-get install -y adoptopenjdk-11-hotspot
 }
 
-install-nodejs() {
+install_nodejs() {
     wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.gz -O /tmp/node.tar.gz
     tar -C /usr/local --strip-components 1 -xzf /tmp/node.tar.gz
     npm install -g npm
 }
 
-install-jhipster() {
+install_jhipster() {
     npm install -g yo generator-jhipster
 }
 
-setup-workspace() {
+setup_workspace() {
     mkdir /home/julien/workspace
     chown -R julien:julien /home/julien/workspace
 }
@@ -70,15 +70,15 @@ main() {
 	EOF
 	printf "$RESET"
     
-    install-base-packages
+    install_base_packages
 
-    install-jdk
+    install_jdk
 
-    install-nodejs
+    install_nodejs
 
-    install-jhipster
+    install_jhipster
 
-    setup-workspace
+    setup_workspace
 
     printf "$BLUE"
 	cat <<-'EOF'
