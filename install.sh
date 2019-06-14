@@ -26,6 +26,31 @@ setup_color() {
 	fi
 }
 
+install-base-packages() {
+    apt-get install -y wget curl vim git zip bzip2 fontconfig python g++ libpng-dev build-essential software-properties-common
+}
+
+install-jdk() {
+    wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+    sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+    apt-get install -y adoptopenjdk-11-hotspot
+}
+
+install-nodejs() {
+    wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.gz -O /tmp/node.tar.gz
+    tar -C /usr/local --strip-components 1 -xzf /tmp/node.tar.gz
+    npm install -g npm
+}
+
+install-jhipster() {
+    npm install -g yo generator-jhipster
+}
+
+setup-workspace() {
+    mkdir /home/julien/workspace
+    chown -R julien:julien /home/julien/workspace
+}
+
 main() {
 
 	setup_color
@@ -44,8 +69,22 @@ main() {
                 --> https://github.com/jdubois/jdubois-configuration/install.sh <--
 	EOF
 	printf "$RESET"
+    
+    install-base-packages
 
+    install-jdk
 
+    install-nodejs
+
+    install-jhipster
+
+    setup-workspace
+
+    printf "$BLUE"
+	cat <<-'EOF'
+    Congratulations, setup is complete!
+	EOF
+	printf "$RESET"
 }
 
 main "$@"
