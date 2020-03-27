@@ -4,16 +4,11 @@ This script installs all the tools I like on top of a normal Ubuntu box.
 
 ## Quickstart
 
-This script should be run via cURL:
+The script should be run as root, and it can be downloaded and executed with one command, using cURL:
 
 ```bash
+sudo su
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/jdubois/jdubois-configuration/master/install.sh)"
-```
-
-Or via wget:
-
-```bash
-sh -c "$(wget -qO- https://raw.githubusercontent.com/jdubois/jdubois-configuration/master/install.sh)"
 ```
 
 ## What is being installed
