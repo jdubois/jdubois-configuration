@@ -11,6 +11,8 @@ sudo su
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/jdubois/jdubois-configuration/master/install.sh)"
 ```
 
+__Warning__ As this script will update the system, it will trigger a system reboot at the end
+
 ## What is being installed
 
 - Basic system utilities like Git or Vim

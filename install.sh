@@ -50,6 +50,7 @@ automatic_updates() {
 
 clean_up() {
     apt autoremove -y
+    reboot
 }
 
 main() {
