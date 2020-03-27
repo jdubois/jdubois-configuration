@@ -1,6 +1,6 @@
 # Julien Dubois's configuration
 
-This script installs all the tools I like on top of a normal Ubuntu box.
+This script installs basic tools, Java and NodeJS on a normal Ubuntu box.
 
 ## Quickstart
 
