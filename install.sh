@@ -42,6 +42,10 @@ install_nodejs() {
     npm install -g npm
 }
 
+clean_up() {
+    apt autoremove -y
+}
+
 main() {
 
 	setup_color
@@ -66,6 +70,8 @@ main() {
     install_jdk
 
     install_nodejs
+
+    clean_up
 
     printf "$BLUE"
 	cat <<-'EOF'
