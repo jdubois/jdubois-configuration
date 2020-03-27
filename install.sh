@@ -50,6 +50,12 @@ automatic_updates() {
 
 clean_up() {
     apt autoremove -y
+    printf "$RED"
+	cat <<-'EOF'
+    Congratulations, setup is complete!
+    The system will reboot NOW in order to be fully ready to use.
+	EOF
+	printf "$RESET"
     reboot
 }
 
@@ -57,7 +63,7 @@ main() {
 
 	setup_color
 
-	printf "$BLUE"
+	printf "$RED"
 	cat <<-'EOF'
    _     _       _           _     _                        __ _                       _   _             
   (_)   | |     | |         (_)   ( )                      / _(_)                     | | (_)            
@@ -81,12 +87,6 @@ main() {
     automatic_updates
 
     clean_up
-
-    printf "$BLUE"
-	cat <<-'EOF'
-    Congratulations, setup is complete!
-	EOF
-	printf "$RESET"
 }
 
 main "$@"
