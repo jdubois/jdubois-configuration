@@ -42,8 +42,9 @@ install_nodejs() {
     npm install -g npm
 }
 
-clean_up() {
+finalize() {
     apt autoremove -y
+    apt-get update && apt-get upgrade -y
 }
 
 main() {
@@ -71,7 +72,7 @@ main() {
 
     install_nodejs
 
-    clean_up
+    finalize
 
     printf "$BLUE"
 	cat <<-'EOF'
