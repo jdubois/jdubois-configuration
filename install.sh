@@ -43,7 +43,7 @@ install_nodejs() {
 }
 
 automatic_updates() {
-    apt-get automatic_updates
+    apt-get update
     apt-get --with-new-pkgs upgrade -y
     apt-get install -y unattended-upgrades
 }
