@@ -37,8 +37,8 @@ install_jdk() {
 }
 
 install_nodejs() {
-    wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.gz -O /tmp/node.tar.gz
-    tar -C /usr/local --strip-components 1 -xzf /tmp/node.tar.gz
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    sudo apt-get install -y nodejs
     npm install -g npm
 }
 
