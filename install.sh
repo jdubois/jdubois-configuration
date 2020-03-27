@@ -42,9 +42,14 @@ install_nodejs() {
     npm install -g npm
 }
 
-finalize() {
+automatic_updates() {
+    apt-get automatic_updates
+    apt-get --with-new-pkgs upgrade -y
+    apt-get install -y unattended-upgrades
+}
+
+clean_up() {
     apt autoremove -y
-    apt-get update && apt-get upgrade -y
 }
 
 main() {
@@ -72,7 +77,9 @@ main() {
 
     install_nodejs
 
-    finalize
+    automatic_updates
+
+    clean_up
 
     printf "$BLUE"
 	cat <<-'EOF'
