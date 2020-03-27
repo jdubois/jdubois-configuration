@@ -16,6 +16,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/jdubois/jdubois-configurat
 - Basic system utilities like Git or Vim
 - Java : latest long term support JDK release from [AdoptOpenJDK](https://adoptopenjdk.net/)
 - NodeJS : latest long term support NodeJS release from [NodeSource](https://nodesource.com/)
+- Automatic updates
 
 ## License
 
