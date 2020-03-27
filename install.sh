@@ -42,15 +42,6 @@ install_nodejs() {
     npm install -g npm
 }
 
-install_jhipster() {
-    npm install -g yo generator-jhipster
-}
-
-setup_workspace() {
-    mkdir /home/julien/workspace
-    chown -R julien:julien /home/julien/workspace
-}
-
 main() {
 
 	setup_color
@@ -75,10 +66,6 @@ main() {
     install_jdk
 
     install_nodejs
-
-    install_jhipster
-
-    setup_workspace
 
     printf "$BLUE"
 	cat <<-'EOF'
